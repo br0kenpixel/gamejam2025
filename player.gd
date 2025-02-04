@@ -17,5 +17,8 @@ func _physics_process(_delta: float) -> void:
 		velocity.y = direction * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-
+	
 	move_and_slide()
+	
+	position.x = clamp(position.x, ($Sprite2D.texture.get_width() / 2), (get_viewport_rect().size.x) - ($Sprite2D.texture.get_width() / 2))
+	position.y = clamp(position.y, ($Sprite2D.texture.get_height() / 2), (get_viewport_rect().size.y) - ($Sprite2D.texture.get_height() / 2))
