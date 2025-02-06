@@ -1,10 +1,10 @@
 extends Panel
 
-@onready var item_display := $CenterContainer/Panel/ItemDisplay
+@onready var item_visual := $ItemDisplay
 
 func update(item: InventoryItem) -> void:
-	if item == null:
-		item_display.visible = false
+	if !item:
+		item_visual.visible = false
 	else:
-		item_display.visible = true
-		item_display.texture = item.texture
+		item_visual.visible = true
+		item_visual.texture = item.texture
