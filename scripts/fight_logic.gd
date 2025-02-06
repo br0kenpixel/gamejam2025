@@ -1,6 +1,6 @@
 extends Control
 
-var enemy: Enemy
+var enemy: Insect
 var player: Player
 
 func _ready() -> void:

@@ -1,4 +1,4 @@
 extends Node
 
 var player: Player = null
-var enemy: Enemy = null
+var enemy: Insect = null

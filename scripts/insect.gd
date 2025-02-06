@@ -1,5 +1,5 @@
 extends Node
-class_name Enemy
+class_name Insect
 
 @export var enemy_name: String
 @export var category: InsectCategories.InsectCategory
@@ -28,7 +28,7 @@ func die() -> void:
 	print("%s has been defeated!" % enemy_name)
 	queue_free()
 
-func attack1(target: Enemy) -> void:
+func attack1(target: Insect) -> void:
 	var hit_chance = randi_range(1, 20)
 	if hit_chance % 2 == 0:
 		var damage := randi_range(0.5 * max_dmg, max_dmg) * InsectCategories.get_category_damage(target.category, category)
@@ -37,12 +37,12 @@ func attack1(target: Enemy) -> void:
 	else:
 		print("%s missed the attack!" % enemy_name)
 
-func attack2(target: Enemy) -> void:
+func attack2(target: Insect) -> void:
 	var damage = randi_range(10, 15)
 	print("%s uses Attack 2 and deals %d damage!" % [enemy_name, damage])
 	target.take_damage(damage)
 
-func attack3(target: Enemy) -> void:
+func attack3(target: Insect) -> void:
 	var damage = randi_range(15, 20)
 	print("%s uses Attack 3 and deals %d damage!" % [enemy_name, damage])
 	target.take_damage(damage)
