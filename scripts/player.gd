@@ -28,6 +28,8 @@ func _physics_process(_delta: float) -> void:
 		else:
 			get_tree().change_scene_to_file("res://scenes/fight.tscn")
 			print("starting fight")
+			PlayerVariables.player = self.duplicate()
+			PlayerVariables.enemy = nearest_enemy.duplicate()
 			return
 
 	move_and_slide()
