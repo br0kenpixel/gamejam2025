@@ -18,5 +18,24 @@ func _physics_process(_delta: float) -> void:
 		velocity.y = direction * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
+	
+	if Input.is_action_just_pressed("fight_start"):
+		var nearest_enemy := get_nearest_enemy()
+
+		if nearest_enemy == null:
+			push_warning("no enemies near")
+		else:
+			get_tree().change_scene_to_file("res://scenes/fight.tscn")
+			print("starting fight")
+			return
 
 	move_and_slide()
+
+func get_nearest_enemy() -> Node:
+	var enemies := get_tree().get_nodes_in_group("enemies")
+
+	for enemy in enemies:
+		if enemy.global_position.distance_to(global_position) <= 200:
+			return enemy
+	
+	return null
