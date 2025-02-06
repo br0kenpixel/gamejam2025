@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu2m0bl5pt3vd"]
+
+[ext_resource type="Script" path="res://scripts/insect.gd" id="1_7ixp8"]
+[ext_resource type="Texture2D" uid="uid://deqxkdm42gq0g" path="res://icon.svg" id="2_2we5l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lam1"]
+size = Vector2(128, 128)
+
+[node name="Insect" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_7ixp8")
+enemy_name = "Gedisop"
+category = 1
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_2we5l")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4lam1")

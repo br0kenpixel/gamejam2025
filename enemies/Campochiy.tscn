@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://drdqmwqpvaujn"]
+
+[ext_resource type="Script" path="res://scripts/insect.gd" id="1_lrlkw"]
+[ext_resource type="Texture2D" uid="uid://deqxkdm42gq0g" path="res://icon.svg" id="2_xcmlo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lam1"]
+size = Vector2(128, 128)
+
+[node name="Insect" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_lrlkw")
+enemy_name = "Campochiy"
+category = 1
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_xcmlo")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4lam1")

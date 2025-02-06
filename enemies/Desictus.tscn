@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://pv64mvg7hdth"]
+
+[ext_resource type="Script" path="res://scripts/insect.gd" id="1_ixmin"]
+[ext_resource type="Texture2D" uid="uid://deqxkdm42gq0g" path="res://icon.svg" id="1_t8o5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lam1"]
+size = Vector2(128, 128)
+
+[node name="Insect" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_ixmin")
+enemy_name = "Desictus"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_t8o5q")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4lam1")
