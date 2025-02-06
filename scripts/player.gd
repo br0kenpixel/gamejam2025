@@ -1,13 +1,20 @@
 class_name Player
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @export var inventory: Inventory
+var in_fight := false
 
 func _physics_process(_delta: float) -> void:
+	handle_move()
+	handle_fight_start()
+
+func handle_move() -> void:
+	if in_fight:
+		return
+	
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -20,6 +27,12 @@ func _physics_process(_delta: float) -> void:
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
+	move_and_slide()
+
+func handle_fight_start() -> void:
+	if in_fight:
+		return
+
 	if Input.is_action_just_pressed("fight_start"):
 		var nearest_enemy := get_nearest_enemy()
 
@@ -31,8 +44,6 @@ func _physics_process(_delta: float) -> void:
 			PlayerVariables.player = self.duplicate()
 			PlayerVariables.enemy = nearest_enemy.duplicate()
 			return
-
-	move_and_slide()
 
 func get_nearest_enemy() -> Node:
 	var enemies := get_tree().get_nodes_in_group("enemies")
