@@ -1,8 +1,11 @@
 extends Control
 
+var enemy: Enemy
+var player: Player
+
 func _ready() -> void:
-	var enemy := PlayerVariables.enemy
-	var player := PlayerVariables.player
+	enemy = PlayerVariables.enemy
+	player = PlayerVariables.player
 
 	player.in_fight = true
 
@@ -17,5 +20,8 @@ func _ready() -> void:
 	y = 128
 	enemy.position = Vector2(x, y)
 
+	enemy.health_bar = $EnemyStats/HealthBar/HPBar
+	enemy.info_label = $EnemyStats/ExperienceDisplay/XPDisplay
+
 func _process(_delta: float) -> void:
-	pass
+	enemy.update_ui()

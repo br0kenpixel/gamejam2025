@@ -25,7 +25,7 @@ const DAMAGE_MAP_LUT := {
     [InsectCategory.Perditor, InsectCategory.Perditor]: 70,
 }
 
-func get_category_damage(first: InsectCategory, second: InsectCategory) -> int:
+static func get_category_damage(first: InsectCategory, second: InsectCategory) -> int:
     if DAMAGE_MAP_LUT.has([first, second]):
         return DAMAGE_MAP_LUT.get([first, second])
     elif DAMAGE_MAP_LUT.has([second, first]):
@@ -33,3 +33,16 @@ func get_category_damage(first: InsectCategory, second: InsectCategory) -> int:
     else:
         push_error("Undefined damage for categories: ", first, ", ", second)
         return 0
+
+static func category_to_string(category: InsectCategory) -> String:
+    match category:
+        InsectCategory.Volans:
+            return "Volans"
+        InsectCategory.Anteater:
+            return "Anteater"
+        InsectCategory.Filth:
+            return "Filth"
+        InsectCategory.Perditor:
+            return "Perditor"
+        _:
+            return "<UNKNOWN>"
