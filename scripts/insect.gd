@@ -12,9 +12,7 @@ var health_bar: ProgressBar
 var info_label: Label
 
 func update_ui():
-	# Nastaví hodnotu v HealthBar
 	health_bar.value = float(health) / max_health * 100
-	# Zobrazí meno, kategóriu a vypočíta level
 	var level := (xp / 100.0) + 1.0
 	info_label.text = "Name: %s | Category: %s | Lvl: %d" % [enemy_name, InsectCategories.category_to_string(category), level]
 
