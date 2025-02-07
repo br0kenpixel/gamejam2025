@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://8t3e6xc8uxvj"]
+
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_eq50k"]
+[ext_resource type="Texture2D" uid="uid://dxogsn6nv5cn4" path="res://sprites/osa.png" id="2_cfnnq"]
+
+[resource]
+script = ExtResource("1_eq50k")
+enemy_name = "Urispell"
+category = 3
+health = 92
+max_health = 92
+max_dmg = 14
+xp = 0
+lvl = 1
+sprite = ExtResource("2_cfnnq")

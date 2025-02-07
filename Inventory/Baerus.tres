@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://q7bjotti8nfl"]
+
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_eqddu"]
+[ext_resource type="Texture2D" uid="uid://0hdeq1itmq3q" path="res://sprites/scarab.png" id="2_pxugu"]
+
+[resource]
+script = ExtResource("1_eqddu")
+enemy_name = "Baerus"
+category = 2
+health = 125
+max_health = 125
+max_dmg = 9
+xp = 0
+lvl = 1
+sprite = ExtResource("2_pxugu")

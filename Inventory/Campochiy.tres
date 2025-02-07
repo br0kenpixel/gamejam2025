@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://xpfj36ibiu2q"]
+
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_52l0j"]
+[ext_resource type="Texture2D" uid="uid://bkj7e5af0dmkl" path="res://sprites/red ant(1).png" id="2_4ric0"]
+
+[resource]
+script = ExtResource("1_52l0j")
+enemy_name = "Campochiy"
+category = 1
+health = 120
+max_health = 120
+max_dmg = 10
+xp = 0
+lvl = 1
+sprite = ExtResource("2_4ric0")

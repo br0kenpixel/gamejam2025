@@ -6,7 +6,8 @@ class_name Insect
 @export var health := 100
 @export var max_health := 100
 @export var max_dmg := 10
-@export var xp := 100
+@export var xp := 0
+@export var lvl:= 1
 @export var sprite: Texture2D
 var health_bar: ProgressBar
 var info_label: Label

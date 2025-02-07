@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://bunrxvcnny7ac"]
+[gd_scene load_steps=83 format=4 uid="uid://cb0jufxb5lssx"]
 
 [ext_resource type="Texture2D" uid="uid://dqrd77wwchst5" path="res://sprites/TILESET VILLAGE TOP DOWN/GRASS DETAIL 1 - DAY.png" id="1_x5360"]
 [ext_resource type="Texture2D" uid="uid://c2u5uxclelmgp" path="res://sprites/TILESET VILLAGE TOP DOWN/GRASS DETAIL 2 - DAY.png" id="2_5k4ft"]
@@ -599,7 +599,8 @@ category = 0
 health = 100
 max_health = 100
 max_dmg = 10
-xp = 100
+xp = 0
+lvl = 1
 sprite = ExtResource("40_dpher")
 
 [sub_resource type="Resource" id="Resource_bhrjj"]
@@ -609,7 +610,8 @@ category = 0
 health = 100
 max_health = 100
 max_dmg = 10
-xp = 100
+xp = 0
+lvl = 1
 sprite = ExtResource("41_1ctg5")
 
 [node name="NewWorld" type="Node2D"]

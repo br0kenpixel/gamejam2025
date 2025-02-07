@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://d3kg4718ah0au"]
+
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_v86qb"]
+[ext_resource type="Texture2D" uid="uid://fti7k4mtokm1" path="res://sprites/konik.png" id="2_wt46j"]
+
+[resource]
+script = ExtResource("1_v86qb")
+enemy_name = "Pebnihilble"
+category = 3
+health = 80
+max_health = 80
+max_dmg = 14
+xp = 0
+lvl = 1
+sprite = ExtResource("2_wt46j")

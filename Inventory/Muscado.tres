@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bt2w43st2h32g"]
+
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_pabuk"]
+[ext_resource type="Texture2D" uid="uid://b2t84f5vth8m8" path="res://sprites/fly.png" id="2_1gdn7"]
+
+[resource]
+script = ExtResource("1_pabuk")
+enemy_name = "Muscado"
+category = 0
+health = 88
+max_health = 88
+max_dmg = 12
+xp = 0
+lvl = 1
+sprite = ExtResource("2_1gdn7")

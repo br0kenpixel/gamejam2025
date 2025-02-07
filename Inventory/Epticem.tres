@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://blibic0rcepne"]
+
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_xtco8"]
+[ext_resource type="Texture2D" uid="uid://cpcyjgvygsof8" path="res://sprites/mandolina.png" id="2_f7p1v"]
+
+[resource]
+script = ExtResource("1_xtco8")
+enemy_name = "Epticem"
+category = 3
+health = 95
+max_health = 95
+max_dmg = 12
+xp = 0
+lvl = 1
+sprite = ExtResource("2_f7p1v")
