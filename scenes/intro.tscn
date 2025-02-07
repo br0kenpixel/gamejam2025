@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfxtdndnlnp7a"]
+
+[ext_resource type="Script" path="res://scripts/intro.gd" id="1_wny6s"]
+[ext_resource type="Texture2D" uid="uid://u6rnbkw63847" path="res://sprites/intro/1.png" id="2_j5oy6"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wny6s")
+
+[node name="Image" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_j5oy6")

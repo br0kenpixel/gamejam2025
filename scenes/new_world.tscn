@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://bunrxvcnny7ac"]
+[gd_scene load_steps=94 format=4 uid="uid://bunrxvcnny7ac"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_vp5j8"]
 [ext_resource type="Texture2D" uid="uid://dqrd77wwchst5" path="res://sprites/TILESET VILLAGE TOP DOWN/GRASS DETAIL 1 - DAY.png" id="1_x5360"]
@@ -47,6 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://cpcyjgvygsof8" path="res://sprites/mandolina.png" id="43_dvhwx"]
 [ext_resource type="Texture2D" uid="uid://0hdeq1itmq3q" path="res://sprites/scarab.png" id="44_k8fpa"]
 [ext_resource type="PackedScene" uid="uid://brcfx2dm1t70t" path="res://objects/GodEnemy.tscn" id="46_bphj5"]
+[ext_resource type="AudioStream" uid="uid://cgk0a6f8epb2h" path="res://sprites/audio/WalkingAroundMusic.ogg" id="48_ciuf0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8brx"]
 texture = ExtResource("1_x5360")
@@ -1044,3 +1045,7 @@ position = Vector2(1380, 945)
 person_name = "Teregri"
 insects = Array[ExtResource("40_musa5")]([SubResource("Resource_vdcqj"), SubResource("Resource_napmn")])
 level = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("48_ciuf0")
+autoplay = true
