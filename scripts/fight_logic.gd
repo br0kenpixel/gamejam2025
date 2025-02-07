@@ -69,12 +69,12 @@ func load_next_player_insect() -> bool:
 	if current_player_insect == null:
 		return false
 
-	current_player_insect.health_bar = $EnemyStats/HealthBar/HPBar
-	current_player_insect.info_label = $PlayerStats/ExperienceDisplay/XPDisplay
+	current_player_insect.health_bar = $PlayerStats/HealthBar/HPBar
+	current_player_insect.info_label = $PlayerStats/StatsDisplay
 	$PlayerTexture.texture = current_player_insect.sprite
 
-	var x := 256
-	var y := get_viewport_rect().size.y - 256
+	var x := 320 / 2
+	var y := (get_viewport_rect().size.y) - 400
 	$PlayerTexture.position = Vector2(x, y)
 	return true
 
@@ -87,12 +87,12 @@ func load_next_opponent_insect() -> bool:
 	if current_opponent_insect == null:
 		return false
 
-	current_opponent_insect.health_bar = $PlayerStats/HealthBar/HPBar
-	current_opponent_insect.info_label = $PlayerStats/ExperienceDisplay/XPDisplay
+	current_opponent_insect.health_bar = $EnemyStats/HealthBar/HPBar
+	current_opponent_insect.info_label = $EnemyStats/StatsDisplay
 	$OpponentTexture.texture = current_opponent_insect.sprite
 
-	var x := get_viewport_rect().size.x - 256
-	var y := 128
+	var x := get_viewport_rect().size.x - 400
+	var y := 320 / 2
 	$OpponentTexture.position = Vector2(x, y)
 	return true
 

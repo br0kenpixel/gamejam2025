@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c1f5qyqxtkogy" path="res://sprites/player/mc right.png" id="5_rn03b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2bst"]
-size = Vector2(128, 256)
+size = Vector2(52, 100)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_fdrlm")
@@ -19,12 +19,20 @@ right_view = ExtResource("5_rn03b")
 insects = null
 metadata/_edit_lock_ = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+
 [node name="Image" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_a7bg5")
 metadata/_edit_lock_ = true
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 24)
+position = Vector2(-2, 10)
 shape = SubResource("RectangleShape2D_q2bst")
 metadata/_edit_lock_ = true
 
@@ -32,3 +40,4 @@ metadata/_edit_lock_ = true
 visible = false
 offset_right = 128.0
 offset_bottom = 64.0
+metadata/_edit_lock_ = true
