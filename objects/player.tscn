@@ -47,3 +47,4 @@ theme_override_font_sizes/font_size = 24
 text = "Press [Enter] to begin fight"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
