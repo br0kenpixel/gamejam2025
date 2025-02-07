@@ -62,3 +62,5 @@ offset_top = -216.0
 offset_right = -384.0
 offset_bottom = -216.0
 scale = Vector2(0.4, 0.4)
+
+[connection signal="item_selected" from="Inventory" to="." method="inventory_item_selected"]

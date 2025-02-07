@@ -68,10 +68,6 @@ func handle_fight_start() -> void:
 			inventory_display.open()
 			inventory_display.fill_with_inventory(insects)
 			challenged_enemy = nearest_enemy
-			#get_tree().change_scene_to_file("res://scenes/fight.tscn")
-			#print("starting fight")
-			#PlayerVariables.player = self.duplicate()
-			#PlayerVariables.enemy = nearest_enemy.duplicate()
 			return
 		elif level >= nearest_enemy.level:
 			fight_guide.visible = true
@@ -95,5 +91,12 @@ func inventory_item_selected(n: int) -> void:
 	print("first insect selected")
 	get_tree().change_scene_to_file("res://scenes/fight.tscn")
 	print("starting fight")
+
+	var selected := insects[n]
+	var tmp := insects[0]
+
+	insects[n] = tmp
+	insects[0] = selected
+
 	PlayerVariables.player = self.duplicate()
 	PlayerVariables.enemy = challenged_enemy.duplicate()
