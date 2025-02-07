@@ -9,7 +9,7 @@ const JUMP_VELOCITY = -400.0
 @export var left_view: Texture2D
 @export var right_view: Texture2D
 @export var insects: Array[Insect]
-@export var level: int
+@export var level: int = 1
 
 @onready var fight_guide := $FightGuide
 
