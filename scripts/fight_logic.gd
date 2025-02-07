@@ -12,7 +12,7 @@ func _process(_delta: float) -> void:
 	if turn:
 		# Opponent's turn
 		print("Opponent will now attack")
-		turn = false
+		opponent_turn_exec()
 	else:
 		# Player's turn
 		print("Player will now attack")
@@ -33,6 +33,17 @@ func _process(_delta: float) -> void:
 			exit_fight()
 			return
 
+func opponent_turn_exec() -> void:
+	var attack := randi_range(1, 3)
+
+	print("Opponent chose attack #", attack)
+
+	match attack:
+		1: attack1()
+		2: attack2()
+		3: attack3()
+		_: push_error("bug?")
+
 func attack1() -> void:
 	if turn:
 		current_opponent_insect.attack1(current_player_insect)
@@ -42,9 +53,11 @@ func attack1() -> void:
 	turn = !turn
 
 func attack2() -> void:
+	turn = !turn
 	pass
 
 func attack3() -> void:
+	turn = !turn
 	pass
 
 func load_next_player_insect() -> bool:

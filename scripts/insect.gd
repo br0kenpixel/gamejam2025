@@ -5,7 +5,7 @@ class_name Insect
 @export var category: InsectCategories.InsectCategory
 @export var health := 100
 @export var max_health := 100
-@export var max_dmg := 100
+@export var max_dmg := 10
 @export var xp := 100
 @export var sprite: Texture2D
 var health_bar: ProgressBar
@@ -25,7 +25,7 @@ func take_damage(damage: int) -> void:
 func attack1(target: Insect) -> void:
 	var hit_chance = randi_range(1, 20)
 	if hit_chance % 2 == 0:
-		var damage := randi_range(0.5 * max_dmg, max_dmg) * InsectCategories.get_category_damage(target.category, category)
+		var damage := randi_range(max_dmg / 2, max_dmg) * InsectCategories.get_category_damage(target.category, category)
 		print("%s uses Attack 1 and deals %d damage!" % [enemy_name, damage])
 		target.take_damage(damage)
 	else:

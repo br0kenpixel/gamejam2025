@@ -9,20 +9,20 @@ enum InsectCategory {
 }
 
 const DAMAGE_MAP_LUT := {
-    [InsectCategory.Volans, InsectCategory.Volans]: 100,
-    [InsectCategory.Volans, InsectCategory.Anteater]: 120,
-    [InsectCategory.Volans, InsectCategory.Filth]: 80,
-    [InsectCategory.Volans, InsectCategory.Perditor]: 100,
+    [InsectCategory.Volans, InsectCategory.Volans]: 1.00,
+    [InsectCategory.Volans, InsectCategory.Anteater]: 1.20,
+    [InsectCategory.Volans, InsectCategory.Filth]: 0.80,
+    [InsectCategory.Volans, InsectCategory.Perditor]: 1.00,
 
-    [InsectCategory.Anteater, InsectCategory.Anteater]: 80,
-    [InsectCategory.Anteater, InsectCategory.Filth]: 120,
-    [InsectCategory.Anteater, InsectCategory.Perditor]: 100,
+    [InsectCategory.Anteater, InsectCategory.Anteater]: 0.80,
+    [InsectCategory.Anteater, InsectCategory.Filth]: 1.20,
+    [InsectCategory.Anteater, InsectCategory.Perditor]: 1.00,
 
-    [InsectCategory.Filth, InsectCategory.Filth]: 80,
-    [InsectCategory.Filth, InsectCategory.Perditor]: 100,
+    [InsectCategory.Filth, InsectCategory.Filth]: 0.80,
+    [InsectCategory.Filth, InsectCategory.Perditor]: 1.00,
 
-    [InsectCategory.Perditor, InsectCategory.Anteater]: 120,
-    [InsectCategory.Perditor, InsectCategory.Perditor]: 70,
+    [InsectCategory.Perditor, InsectCategory.Anteater]: 1.20,
+    [InsectCategory.Perditor, InsectCategory.Perditor]: 0.70,
 }
 
 static func get_category_damage(first: InsectCategory, second: InsectCategory) -> int:
