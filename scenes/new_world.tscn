@@ -996,7 +996,7 @@ tile_set = SubResource("TileSet_kba2r")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("38_8kds4")]
-position = Vector2(252, 305)
+position = Vector2(-620, 241)
 insects = Array[ExtResource("40_musa5")]([SubResource("Resource_t6tji")])
 
 [node name="Enemy" parent="." instance=ExtResource("39_ayh6h")]
