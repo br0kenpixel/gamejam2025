@@ -26,20 +26,23 @@ metadata/_edit_lock_ = true
 
 [node name="Attack1" type="Button" parent="Attacks"]
 layout_mode = 2
+tooltip_text = "85-100% accuracy"
 theme_override_font_sizes/font_size = 40
-text = "ATTACK 1"
+text = "HARD"
 metadata/_edit_lock_ = true
 
 [node name="Attack2" type="Button" parent="Attacks"]
 layout_mode = 2
+tooltip_text = "90% accuracy"
 theme_override_font_sizes/font_size = 40
-text = "ATTACK 2"
+text = "PRECISION"
 metadata/_edit_lock_ = true
 
 [node name="Attack3" type="Button" parent="Attacks"]
 layout_mode = 2
+tooltip_text = "Lower precison, higher damage, but recovers some HP."
 theme_override_font_sizes/font_size = 40
-text = "ATTACK 3"
+text = "LEACH"
 metadata/_edit_lock_ = true
 
 [node name="EnemyStats" type="Control" parent="."]

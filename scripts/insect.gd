@@ -23,20 +23,29 @@ func take_damage(damage: int) -> void:
 	health = max(0, health)
 
 func attack1(target: Insect) -> void:
-	var hit_chance = randi_range(1, 20)
-	if hit_chance % 2 == 0:
-		var damage := randi_range(max_dmg / 2, max_dmg) * InsectCategories.get_category_damage(target.category, category)
+	var hit_chance = randi_range(1, 100)
+	if hit_chance <= 60:
+		var damage := randi_range(round(max_dmg - (max_dmg / 4)), max_dmg) * InsectCategories.get_category_damage(target.category, category)
 		print("%s uses Attack 1 and deals %d damage!" % [enemy_name, damage])
 		target.take_damage(damage)
 	else:
 		print("%s missed the attack!" % enemy_name)
 
 func attack2(target: Insect) -> void:
-	var damage = randi_range(10, 15)
-	print("%s uses Attack 2 and deals %d damage!" % [enemy_name, damage])
-	target.take_damage(damage)
-
+	var hit_chance = randi_range(1, 100)
+	if hit_chance <= 80:
+		var damage := randi_range(round(max_dmg - (max_dmg / 2)), max_dmg) * InsectCategories.get_category_damage(target.category, category)
+		print("%s uses Attack 2 and deals %d damage!" % [enemy_name, damage])
+		target.take_damage(damage)
+	else:
+		print("%s missed the attack!" % enemy_name)
+		
 func attack3(target: Insect) -> void:
-	var damage = randi_range(15, 20)
-	print("%s uses Attack 3 and deals %d damage!" % [enemy_name, damage])
-	target.take_damage(damage)
+	var hit_chance = randi_range(1, 100)
+	if hit_chance <= 70:
+		var damage := randi_range(round(max_dmg - (max_dmg / 2)), max_dmg) * InsectCategories.get_category_damage(target.category, category)
+		print("%s uses Attack 3 and deals %d damage!" % [enemy_name, damage])
+		target.take_damage(damage)
+		take_damage(-damage / 2)
+	else:
+		print("%s missed the attack!" % enemy_name)

@@ -53,12 +53,20 @@ func attack1() -> void:
 	turn = !turn
 
 func attack2() -> void:
+	if turn:
+		current_opponent_insect.attack2(current_player_insect)
+	else:
+		current_player_insect.attack2(current_opponent_insect)
+
 	turn = !turn
-	pass
 
 func attack3() -> void:
+	if turn:
+		current_opponent_insect.attack3(current_player_insect)
+	else:
+		current_player_insect.attack3(current_opponent_insect)
+
 	turn = !turn
-	pass
 
 func load_next_player_insect() -> bool:
 	if current_player_insect != null:
