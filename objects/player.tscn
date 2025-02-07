@@ -37,11 +37,17 @@ shape = SubResource("RectangleShape2D_q2bst")
 metadata/_edit_lock_ = true
 
 [node name="FightGuide" type="Label" parent="."]
-visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
 offset_left = -88.0
 offset_top = -96.0
 offset_right = 87.0
 offset_bottom = -61.0
+grow_horizontal = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("6_ibgl4")
 theme_override_font_sizes/font_size = 24
-text = "Press Enter to begin fight"
+text = "Press [Enter] to begin fight"
+horizontal_alignment = 1
+vertical_alignment = 1

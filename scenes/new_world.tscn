@@ -638,3 +638,4 @@ insects = Array[ExtResource("40_musa5")]([SubResource("Resource_bhrjj")])
 
 [node name="Enemy2" parent="." instance=ExtResource("39_ayh6h")]
 position = Vector2(1760, 528)
+level = 3

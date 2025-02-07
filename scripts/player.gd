@@ -9,6 +9,7 @@ const JUMP_VELOCITY = -400.0
 @export var left_view: Texture2D
 @export var right_view: Texture2D
 @export var insects: Array[Insect]
+@export var level: int
 
 @onready var fight_guide := $FightGuide
 
@@ -60,14 +61,18 @@ func handle_fight_start() -> void:
 	
 	var nearest_enemy := get_nearest_enemy()
 	if nearest_enemy != null:
-		if Input.is_action_just_pressed("fight_start"):
+		if Input.is_action_just_pressed("fight_start") and level >= nearest_enemy.level:
 			get_tree().change_scene_to_file("res://scenes/fight.tscn")
 			print("starting fight")
 			PlayerVariables.player = self.duplicate()
 			PlayerVariables.enemy = nearest_enemy.duplicate()
 			return
+		elif level >= nearest_enemy.level:
+			fight_guide.visible = true
+			fight_guide.text = "Press [ENTER] to begin fight"
 		else:
 			fight_guide.visible = true
+			fight_guide.text = "Requires LVL " + str(nearest_enemy.level)
 	else:
 		fight_guide.visible = false
 
