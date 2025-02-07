@@ -1,40 +1,86 @@
-[gd_scene load_steps=8 format=3 uid="uid://o2q8y6wa7exm"]
+[gd_scene load_steps=6 format=3 uid="uid://o2q8y6wa7exm"]
 
-[ext_resource type="Script" path="res://scripts/world.gd" id="1_0gthp"]
-[ext_resource type="PackedScene" uid="uid://4vx208cspmhs" path="res://objects/player.tscn" id="1_c7mlr"]
-[ext_resource type="Script" path="res://scripts/insect.gd" id="2_n04ci"]
-[ext_resource type="PackedScene" uid="uid://bu0nynmh7tw5y" path="res://objects/Enemy.tscn" id="2_nw16i"]
-[ext_resource type="Texture2D" uid="uid://deqxkdm42gq0g" path="res://icon.svg" id="4_1br7l"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_6hui5"]
+[ext_resource type="Texture2D" uid="uid://cuo3q2yjexua6" path="res://sprites/backgrounds/9285857.jpg" id="2_yo45x"]
+[ext_resource type="FontFile" uid="uid://dm3mclu8iowah" path="res://fonts/Teko-Bold.ttf" id="3_mqfmt"]
+[ext_resource type="FontFile" uid="uid://dl23u7tp1asec" path="res://fonts/Teko-Medium.ttf" id="4_n7mqp"]
+[ext_resource type="FontFile" uid="uid://dqoo3c2i4fdpo" path="res://fonts/Teko-Light.ttf" id="5_dpc5o"]
 
-[sub_resource type="Resource" id="Resource_7hgrl"]
-script = ExtResource("2_n04ci")
-enemy_name = "aaaaaa"
-category = 0
-health = 100
-max_health = 100
-max_dmg = 10
-xp = 100
-sprite = ExtResource("4_1br7l")
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6hui5")
 
-[sub_resource type="Resource" id="Resource_p4s1p"]
-script = ExtResource("2_n04ci")
-enemy_name = "aaaaaaaa"
-category = 0
-health = 100
-max_health = 100
-max_dmg = 10
-xp = 100
-sprite = ExtResource("4_1br7l")
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 664.0
+offset_top = 16.0
+offset_right = 2355.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_mqfmt")
+theme_override_font_sizes/font_size = 128
+text = "The Untitled Pokemon ripoff Game"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="World" type="Node2D"]
-script = ExtResource("1_0gthp")
-metadata/_edit_lock_ = true
+[node name="Start" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1152.0
+offset_top = 976.0
+offset_right = 1840.0
+offset_bottom = 1077.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_n7mqp")
+theme_override_font_sizes/font_size = 64
+text = "START"
 
-[node name="Player" parent="." instance=ExtResource("1_c7mlr")]
-position = Vector2(400, 312)
-insects = Array[ExtResource("2_n04ci")]([SubResource("Resource_7hgrl")])
+[node name="Exit" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1152.0
+offset_top = 1096.0
+offset_right = 1840.0
+offset_bottom = 1197.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_n7mqp")
+theme_override_font_sizes/font_size = 64
+text = "EXIT
+"
 
-[node name="Enemy" parent="." instance=ExtResource("2_nw16i")]
-position = Vector2(888, 312)
-person_name = "Bob"
-insects = Array[ExtResource("2_n04ci")]([SubResource("Resource_p4s1p")])
+[node name="Container" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GJ" type="Label" parent="Container"]
+visible = false
+layout_mode = 0
+offset_left = 2616.0
+offset_top = 1896.0
+offset_right = 2992.0
+offset_bottom = 1989.0
+theme_override_fonts/font = ExtResource("5_dpc5o")
+theme_override_font_sizes/font_size = 64
+text = "GameJam 2025 - Nitra"
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_yo45x")

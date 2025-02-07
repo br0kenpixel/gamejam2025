@@ -1,5 +1,6 @@
-[gd_scene load_steps=83 format=4 uid="uid://bunrxvcnny7ac"]
+[gd_scene load_steps=84 format=4 uid="uid://bunrxvcnny7ac"]
 
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_qgcdp"]
 [ext_resource type="Texture2D" uid="uid://dqrd77wwchst5" path="res://sprites/TILESET VILLAGE TOP DOWN/GRASS DETAIL 1 - DAY.png" id="1_x5360"]
 [ext_resource type="Texture2D" uid="uid://c2u5uxclelmgp" path="res://sprites/TILESET VILLAGE TOP DOWN/GRASS DETAIL 2 - DAY.png" id="2_5k4ft"]
 [ext_resource type="Texture2D" uid="uid://cuc158p2hs10o" path="res://sprites/TILESET VILLAGE TOP DOWN/GROUND DETAIL 4 - DAY.png" id="3_era60"]
@@ -599,7 +600,6 @@ category = 0
 health = 100
 max_health = 100
 max_dmg = 10
-xp = 100
 sprite = ExtResource("40_dpher")
 
 [sub_resource type="Resource" id="Resource_bhrjj"]
@@ -609,10 +609,10 @@ category = 0
 health = 100
 max_health = 100
 max_dmg = 10
-xp = 100
 sprite = ExtResource("41_1ctg5")
 
 [node name="NewWorld" type="Node2D"]
+script = ExtResource("1_qgcdp")
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
