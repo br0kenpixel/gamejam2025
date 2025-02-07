@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-@export var inventory: Inventory
+@export var insects: Array[Insect]
 var in_fight := false
 
 func _physics_process(_delta: float) -> void:
@@ -45,7 +45,7 @@ func handle_fight_start() -> void:
 			PlayerVariables.enemy = nearest_enemy.duplicate()
 			return
 
-func get_nearest_enemy() -> Node:
+func get_nearest_enemy() -> Enemy:
 	var enemies := get_tree().get_nodes_in_group("enemies")
 
 	for enemy in enemies:

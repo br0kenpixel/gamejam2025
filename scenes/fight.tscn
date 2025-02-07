@@ -177,3 +177,7 @@ offset_bottom = 55.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "N/A"
 metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Attacks/Attack1" to="." method="attack1"]
+[connection signal="pressed" from="Attacks/Attack2" to="." method="attack2"]
+[connection signal="pressed" from="Attacks/Attack3" to="." method="attack3"]
