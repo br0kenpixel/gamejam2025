@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://o2q8y6wa7exm"]
+[gd_scene load_steps=8 format=3 uid="uid://o2q8y6wa7exm"]
 
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_0gthp"]
 [ext_resource type="PackedScene" uid="uid://4vx208cspmhs" path="res://objects/player.tscn" id="1_c7mlr"]
 [ext_resource type="Script" path="res://scripts/insect.gd" id="2_n04ci"]
 [ext_resource type="PackedScene" uid="uid://bu0nynmh7tw5y" path="res://objects/Enemy.tscn" id="2_nw16i"]
@@ -26,6 +27,7 @@ xp = 100
 sprite = ExtResource("4_1br7l")
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_0gthp")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_c7mlr")]
