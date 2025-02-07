@@ -170,6 +170,7 @@ offset_right = 1864.0
 offset_bottom = 336.0
 grow_horizontal = 0
 stretch_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="PlayerTexture" type="NinePatchRect" parent="."]
 clip_contents = true
@@ -182,6 +183,7 @@ offset_top = 600.0
 offset_right = 456.0
 offset_bottom = 920.0
 grow_vertical = 0
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Attacks/Attack1" to="." method="attack1"]
 [connection signal="pressed" from="Attacks/Attack2" to="." method="attack2"]
