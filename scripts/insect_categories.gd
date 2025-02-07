@@ -25,7 +25,7 @@ const DAMAGE_MAP_LUT := {
     [InsectCategory.Perditor, InsectCategory.Perditor]: 0.70,
 }
 
-static func get_category_damage(first: InsectCategory, second: InsectCategory) -> int:
+static func get_category_damage(first: InsectCategory, second: InsectCategory) -> float:
     if DAMAGE_MAP_LUT.has([first, second]):
         return DAMAGE_MAP_LUT.get([first, second])
     elif DAMAGE_MAP_LUT.has([second, first]):
