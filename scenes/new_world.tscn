@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=4 uid="uid://bunrxvcnny7ac"]
+[gd_scene load_steps=91 format=4 uid="uid://bunrxvcnny7ac"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_vp5j8"]
 [ext_resource type="Texture2D" uid="uid://dqrd77wwchst5" path="res://sprites/TILESET VILLAGE TOP DOWN/GRASS DETAIL 1 - DAY.png" id="1_x5360"]
@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://bkj7e5af0dmkl" path="res://sprites/red ant(1).png" id="40_dpher"]
 [ext_resource type="Script" path="res://scripts/insect.gd" id="40_musa5"]
 [ext_resource type="Texture2D" uid="uid://dxogsn6nv5cn4" path="res://sprites/osa.png" id="41_1ctg5"]
+[ext_resource type="Texture2D" uid="uid://cpcyjgvygsof8" path="res://sprites/mandolina.png" id="43_dvhwx"]
 [ext_resource type="Texture2D" uid="uid://0hdeq1itmq3q" path="res://sprites/scarab.png" id="44_k8fpa"]
 [ext_resource type="PackedScene" uid="uid://brcfx2dm1t70t" path="res://objects/GodEnemy.tscn" id="46_bphj5"]
 
@@ -950,13 +951,23 @@ sources/37 = SubResource("TileSetAtlasSource_t6b1m")
 
 [sub_resource type="Resource" id="Resource_t6tji"]
 script = ExtResource("40_musa5")
-enemy_name = "ccc"
+enemy_name = "Joshua"
 category = 0
 health = 100
 max_health = 100
 max_dmg = 10
 xp = 100
 sprite = ExtResource("40_dpher")
+
+[sub_resource type="Resource" id="Resource_clvm0"]
+script = ExtResource("40_musa5")
+enemy_name = "Elizabeth"
+category = 2
+health = 100
+max_health = 100
+max_dmg = 10
+xp = 100
+sprite = ExtResource("43_dvhwx")
 
 [sub_resource type="Resource" id="Resource_bhrjj"]
 script = ExtResource("40_musa5")
@@ -997,7 +1008,7 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("38_8kds4")]
 position = Vector2(-620, 241)
-insects = Array[ExtResource("40_musa5")]([SubResource("Resource_t6tji")])
+insects = Array[ExtResource("40_musa5")]([SubResource("Resource_t6tji"), SubResource("Resource_clvm0")])
 
 [node name="Enemy" parent="." instance=ExtResource("39_ayh6h")]
 position = Vector2(-76, 905)

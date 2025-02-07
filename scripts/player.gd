@@ -12,11 +12,14 @@ const JUMP_VELOCITY = -400.0
 @export var level: int = 1
 
 @onready var fight_guide := $FightGuide
+@onready var inventory_display := $Inventory
 
 var in_fight := false
 var last_direction := Vector2.ZERO
+var challenged_enemy: Enemy = null
 
 func _ready() -> void:
+	inventory_display.close()
 	fight_guide.visible = false
 
 func _physics_process(_delta: float) -> void:
@@ -62,10 +65,13 @@ func handle_fight_start() -> void:
 	var nearest_enemy := get_nearest_enemy()
 	if nearest_enemy != null:
 		if Input.is_action_just_pressed("fight_start") and level >= nearest_enemy.level:
-			get_tree().change_scene_to_file("res://scenes/fight.tscn")
-			print("starting fight")
-			PlayerVariables.player = self.duplicate()
-			PlayerVariables.enemy = nearest_enemy.duplicate()
+			inventory_display.open()
+			inventory_display.fill_with_inventory(insects)
+			challenged_enemy = nearest_enemy
+			#get_tree().change_scene_to_file("res://scenes/fight.tscn")
+			#print("starting fight")
+			#PlayerVariables.player = self.duplicate()
+			#PlayerVariables.enemy = nearest_enemy.duplicate()
 			return
 		elif level >= nearest_enemy.level:
 			fight_guide.visible = true
@@ -84,3 +90,10 @@ func get_nearest_enemy() -> Enemy:
 			return enemy
 	
 	return null
+
+func inventory_item_selected(n: int) -> void:
+	print("first insect selected")
+	get_tree().change_scene_to_file("res://scenes/fight.tscn")
+	print("starting fight")
+	PlayerVariables.player = self.duplicate()
+	PlayerVariables.enemy = challenged_enemy.duplicate()
