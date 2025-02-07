@@ -8,10 +8,15 @@ const JUMP_VELOCITY = -400.0
 @export var back_view: Texture2D
 @export var left_view: Texture2D
 @export var right_view: Texture2D
-
 @export var insects: Array[Insect]
+
+@onready var fight_guide := $FightGuide
+
 var in_fight := false
 var last_direction := Vector2.ZERO
+
+func _ready() -> void:
+	fight_guide.visible = false
 
 func _physics_process(_delta: float) -> void:
 	handle_move()
@@ -52,24 +57,25 @@ func update_sprite_texture() -> void:
 func handle_fight_start() -> void:
 	if in_fight:
 		return
-
-	if Input.is_action_just_pressed("fight_start"):
-		var nearest_enemy := get_nearest_enemy()
-
-		if nearest_enemy == null:
-			push_warning("no enemies near")
-		else:
+	
+	var nearest_enemy := get_nearest_enemy()
+	if nearest_enemy != null:
+		if Input.is_action_just_pressed("fight_start"):
 			get_tree().change_scene_to_file("res://scenes/fight.tscn")
 			print("starting fight")
 			PlayerVariables.player = self.duplicate()
 			PlayerVariables.enemy = nearest_enemy.duplicate()
 			return
+		else:
+			fight_guide.visible = true
+	else:
+		fight_guide.visible = false
 
 func get_nearest_enemy() -> Enemy:
 	var enemies := get_tree().get_nodes_in_group("enemies")
 
 	for enemy in enemies:
-		if enemy.global_position.distance_to(global_position) <= 200:
+		if enemy.global_position.distance_to(global_position) <= 150:
 			return enemy
 	
 	return null

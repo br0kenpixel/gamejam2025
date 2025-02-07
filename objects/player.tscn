@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://4vx208cspmhs"]
+[gd_scene load_steps=8 format=3 uid="uid://4vx208cspmhs"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fdrlm"]
 [ext_resource type="Texture2D" uid="uid://b4q4e17ojvppk" path="res://sprites/player/mc front.png" id="2_a7bg5"]
 [ext_resource type="Texture2D" uid="uid://c10fjyhhcmg5j" path="res://sprites/player/mc back.png" id="3_77hxd"]
 [ext_resource type="Texture2D" uid="uid://cc3ue3vxicit0" path="res://sprites/player/mc left.png" id="4_wyp3m"]
 [ext_resource type="Texture2D" uid="uid://c1f5qyqxtkogy" path="res://sprites/player/mc right.png" id="5_rn03b"]
+[ext_resource type="FontFile" uid="uid://c4rg6yqjgm75u" path="res://fonts/Teko-Regular.ttf" id="6_ibgl4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2bst"]
 size = Vector2(52, 100)
@@ -15,7 +16,6 @@ front_view = ExtResource("2_a7bg5")
 back_view = ExtResource("3_77hxd")
 left_view = ExtResource("4_wyp3m")
 right_view = ExtResource("5_rn03b")
-insects = null
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -35,3 +35,13 @@ metadata/_edit_lock_ = true
 position = Vector2(-2, 10)
 shape = SubResource("RectangleShape2D_q2bst")
 metadata/_edit_lock_ = true
+
+[node name="FightGuide" type="Label" parent="."]
+visible = false
+offset_left = -88.0
+offset_top = -96.0
+offset_right = 87.0
+offset_bottom = -61.0
+theme_override_fonts/font = ExtResource("6_ibgl4")
+theme_override_font_sizes/font_size = 24
+text = "Press Enter to begin fight"
