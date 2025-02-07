@@ -10,9 +10,9 @@ func _ready() -> void:
 	load_next_player_insect()
 
 func _process(_delta: float) -> void:
-	if current_opponent_insect.health == 0:
+	if current_opponent_insect.health <= 0:
 		load_next_opponent_insect()
-	if current_player_insect.health == 0:
+	if current_player_insect.health <= 0:
 		load_next_player_insect()
 
 	update_insect_stats()
@@ -32,22 +32,30 @@ func attack3() -> void:
 func load_next_player_insect() -> void:
 	if current_player_insect != null:
 		current_player_insect.call_deferred("queue_free")
+		PlayerVariables.player.insects.remove_at(0)
 
 	current_player_insect = get_next_player_insect()
+	current_player_insect.health_bar = $EnemyStats/HealthBar/HPBar
+	current_player_insect.info_label = $PlayerStats/ExperienceDisplay/XPDisplay
+	$PlayerTexture.texture = current_player_insect.sprite
 
 	var x := 256
 	var y := get_viewport_rect().size.y - 256
-	current_player_insect.position = Vector2(x, y)
+	$PlayerTexture.position = Vector2(x, y)
 
 func load_next_opponent_insect() -> void:
 	if current_opponent_insect != null:
 		current_opponent_insect.call_deferred("queue_free")
+		PlayerVariables.enemy.insects.remove_at(0)
 
 	current_opponent_insect = get_next_opponent_insect()
+	current_opponent_insect.health_bar = $EnemyStats/HealthBar/HPBar
+	current_opponent_insect.info_label = $PlayerStats/ExperienceDisplay/XPDisplay
+	$OpponentTexture.texture = current_opponent_insect.sprite
 
 	var x := get_viewport_rect().size.x - 256
 	var y := 128
-	current_opponent_insect.position = Vector2(x, y)
+	$OpponentTexture.position = Vector2(x, y)
 
 func get_next_player_insect() -> Insect:
 	return PlayerVariables.player.insects[0]

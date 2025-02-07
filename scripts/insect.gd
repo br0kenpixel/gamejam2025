@@ -1,4 +1,4 @@
-extends Node
+extends Resource
 class_name Insect
 
 @export var enemy_name: String
@@ -7,6 +7,7 @@ class_name Insect
 @export var max_health := 100
 @export var max_dmg := 100
 @export var xp := 100
+@export var sprite: Texture2D
 var health_bar: ProgressBar
 var info_label: Label
 
@@ -20,13 +21,6 @@ func update_ui():
 func take_damage(damage: int) -> void:
 	health -= damage
 	health = max(0, health)
-	update_ui()
-	if health == 0:
-		die()
-
-func die() -> void:
-	print("%s has been defeated!" % enemy_name)
-	queue_free()
 
 func attack1(target: Insect) -> void:
 	var hit_chance = randi_range(1, 20)
