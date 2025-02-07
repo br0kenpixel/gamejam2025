@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://4vx208cspmhs"]
+[gd_scene load_steps=9 format=3 uid="uid://4vx208cspmhs"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fdrlm"]
 [ext_resource type="Texture2D" uid="uid://b4q4e17ojvppk" path="res://sprites/player/mc front.png" id="2_a7bg5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bkyrj03ei4x27" path="res://objects/player_inventory.tscn" id="4_bw15r"]
 [ext_resource type="Texture2D" uid="uid://cc3ue3vxicit0" path="res://sprites/player/mc left.png" id="4_wyp3m"]
 [ext_resource type="Texture2D" uid="uid://c1f5qyqxtkogy" path="res://sprites/player/mc right.png" id="5_rn03b"]
+[ext_resource type="Script" path="res://scripts/inventory.gd" id="7_5dw02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2bst"]
 size = Vector2(52, 100)
@@ -41,3 +42,19 @@ visible = false
 offset_right = 128.0
 offset_bottom = 64.0
 metadata/_edit_lock_ = true
+
+[node name="InventoryController" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_5dw02")
+
+[node name="PrimarySlots" type="HBoxContainer" parent="InventoryController"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FullRoster" type="VBoxContainer" parent="InventoryController"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
