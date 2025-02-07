@@ -122,6 +122,10 @@ func update_insect_stats() -> void:
 	current_opponent_insect.update_ui()
 	current_player_insect.update_ui()
 
+func cancel_fight() -> void:
+	PlayerVariables.enemy = null
+	exit_fight()
+
 func exit_fight() -> void:
 	get_tree().change_scene_to_file("res://scenes/new_world.tscn")
 	print("ending fight")
