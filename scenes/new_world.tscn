@@ -1,5 +1,6 @@
-[gd_scene load_steps=85 format=4 uid="uid://bunrxvcnny7ac"]
+[gd_scene load_steps=88 format=4 uid="uid://bunrxvcnny7ac"]
 
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_vp5j8"]
 [ext_resource type="Texture2D" uid="uid://dqrd77wwchst5" path="res://sprites/TILESET VILLAGE TOP DOWN/GRASS DETAIL 1 - DAY.png" id="1_x5360"]
 [ext_resource type="Texture2D" uid="uid://c2u5uxclelmgp" path="res://sprites/TILESET VILLAGE TOP DOWN/GRASS DETAIL 2 - DAY.png" id="2_5k4ft"]
 [ext_resource type="Texture2D" uid="uid://cuc158p2hs10o" path="res://sprites/TILESET VILLAGE TOP DOWN/GROUND DETAIL 4 - DAY.png" id="3_era60"]
@@ -43,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://bkj7e5af0dmkl" path="res://sprites/red ant(1).png" id="40_dpher"]
 [ext_resource type="Script" path="res://scripts/insect.gd" id="40_musa5"]
 [ext_resource type="Texture2D" uid="uid://dxogsn6nv5cn4" path="res://sprites/osa.png" id="41_1ctg5"]
+[ext_resource type="Texture2D" uid="uid://0hdeq1itmq3q" path="res://sprites/scarab.png" id="44_k8fpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8brx"]
 texture = ExtResource("1_x5360")
@@ -965,8 +967,19 @@ max_dmg = 10
 xp = 100
 sprite = ExtResource("41_1ctg5")
 
+[sub_resource type="Resource" id="Resource_055de"]
+script = ExtResource("40_musa5")
+enemy_name = "ddd"
+category = 0
+health = 100
+max_health = 100
+max_dmg = 10
+xp = 100
+sprite = ExtResource("44_k8fpa")
+
 [node name="NewWorld" type="Node2D"]
 position = Vector2(-4, -33)
+script = ExtResource("1_vp5j8")
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -986,9 +999,12 @@ position = Vector2(252, 305)
 insects = Array[ExtResource("40_musa5")]([SubResource("Resource_t6tji")])
 
 [node name="Enemy" parent="." instance=ExtResource("39_ayh6h")]
-position = Vector2(-93, 955)
+position = Vector2(-76, 905)
 person_name = "aaa"
 insects = Array[ExtResource("40_musa5")]([SubResource("Resource_bhrjj")])
 
 [node name="Enemy2" parent="." instance=ExtResource("39_ayh6h")]
 position = Vector2(1386, 205)
+person_name = "bbb"
+insects = Array[ExtResource("40_musa5")]([SubResource("Resource_055de")])
+level = 2
