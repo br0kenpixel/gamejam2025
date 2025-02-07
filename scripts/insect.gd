@@ -16,7 +16,7 @@ func update_ui():
 	health_bar.value = float(health) / max_health * 100
 	# Zobrazí meno, kategóriu a vypočíta level
 	var level := (xp / 100.0) + 1.0
-	info_label.text = "%s\n%s\nLvl: %d" % [enemy_name, InsectCategories.category_to_string(category), level]
+	info_label.text = "Name: %s | Category: %s | Lvl: %d" % [enemy_name, InsectCategories.category_to_string(category), level]
 
 func take_damage(damage: int) -> void:
 	health -= damage

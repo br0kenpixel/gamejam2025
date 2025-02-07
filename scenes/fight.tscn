@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd71iqdd0vvxi"]
+[gd_scene load_steps=4 format=3 uid="uid://bd71iqdd0vvxi"]
 
 [ext_resource type="Script" path="res://scripts/fight_logic.gd" id="1_hwh14"]
+[ext_resource type="FontFile" uid="uid://c4rg6yqjgm75u" path="res://fonts/Teko-Regular.ttf" id="2_c6na8"]
+[ext_resource type="FontFile" uid="uid://dm3mclu8iowah" path="res://fonts/Teko-Bold.ttf" id="2_wqh4f"]
 
 [node name="Fight" type="Control"]
 layout_mode = 3
@@ -27,6 +29,7 @@ metadata/_edit_lock_ = true
 [node name="Attack1" type="Button" parent="Attacks"]
 layout_mode = 2
 tooltip_text = "85-100% accuracy"
+theme_override_fonts/font = ExtResource("2_wqh4f")
 theme_override_font_sizes/font_size = 40
 text = "HARD"
 metadata/_edit_lock_ = true
@@ -34,6 +37,7 @@ metadata/_edit_lock_ = true
 [node name="Attack2" type="Button" parent="Attacks"]
 layout_mode = 2
 tooltip_text = "90% accuracy"
+theme_override_fonts/font = ExtResource("2_wqh4f")
 theme_override_font_sizes/font_size = 40
 text = "PRECISION"
 metadata/_edit_lock_ = true
@@ -41,6 +45,7 @@ metadata/_edit_lock_ = true
 [node name="Attack3" type="Button" parent="Attacks"]
 layout_mode = 2
 tooltip_text = "Lower precison, higher damage, but recovers some HP."
+theme_override_fonts/font = ExtResource("2_wqh4f")
 theme_override_font_sizes/font_size = 40
 text = "LEACH"
 metadata/_edit_lock_ = true
@@ -70,6 +75,8 @@ offset_right = 27.0
 offset_bottom = 23.0
 rotation = 0.00102436
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_c6na8")
+theme_override_font_sizes/font_size = 24
 text = "HP:"
 metadata/_edit_lock_ = true
 
@@ -78,6 +85,8 @@ layout_mode = 2
 offset_left = 32.0
 offset_right = 272.0
 offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("2_c6na8")
+theme_override_font_sizes/font_size = 20
 step = 1.0
 metadata/_edit_lock_ = true
 
@@ -88,6 +97,8 @@ offset_top = 32.0
 offset_right = 278.0
 offset_bottom = 55.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_c6na8")
+theme_override_font_sizes/font_size = 24
 text = "N/A"
 metadata/_edit_lock_ = true
 
@@ -120,6 +131,8 @@ offset_right = 27.0
 offset_bottom = 23.0
 rotation = 0.00102436
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_c6na8")
+theme_override_font_sizes/font_size = 24
 text = "HP:"
 metadata/_edit_lock_ = true
 
@@ -128,6 +141,8 @@ layout_mode = 2
 offset_left = 32.0
 offset_right = 272.0
 offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("2_c6na8")
+theme_override_font_sizes/font_size = 20
 step = 1.0
 metadata/_edit_lock_ = true
 
@@ -138,6 +153,8 @@ offset_top = 32.0
 offset_right = 278.0
 offset_bottom = 55.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_c6na8")
+theme_override_font_sizes/font_size = 24
 text = "N/A"
 metadata/_edit_lock_ = true
 
@@ -152,20 +169,6 @@ offset_top = 96.0
 offset_right = 1864.0
 offset_bottom = 336.0
 grow_horizontal = 0
-stretch_mode = 2
-
-[node name="PlayerTexture_2" type="TextureRect" parent="."]
-visible = false
-custom_minimum_size = Vector2(320, 320)
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 43.0
-offset_top = 720.0
-offset_right = 347.0
-offset_bottom = 960.0
-grow_vertical = 0
 stretch_mode = 2
 
 [node name="PlayerTexture" type="NinePatchRect" parent="."]
