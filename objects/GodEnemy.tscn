@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://brcfx2dm1t70t"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_b3ycx"]
+[ext_resource type="Texture2D" uid="uid://bxk68ictxopl1" path="res://sprites/hmyzi boh.png" id="2_lt807"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3ubs"]
+size = Vector2(88, 108)
+
+[node name="GodEnemy" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_b3ycx")
+metadata/_edit_lock_ = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_lt807")
+metadata/_edit_lock_ = true
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r3ubs")
+metadata/_edit_lock_ = true
