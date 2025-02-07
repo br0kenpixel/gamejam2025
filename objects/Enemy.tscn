@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bu0nynmh7tw5y"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_t7eiq"]
-[ext_resource type="Texture2D" uid="uid://bjx8ie7g1f7ts" path="res://sprites/player/friend.png" id="2_eqamu"]
+[ext_resource type="Texture2D" uid="uid://bi8fkkuh4to0c" path="res://sprites/enemy.png" id="2_vw0fc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3ubs"]
-size = Vector2(52, 88)
+size = Vector2(52, 104)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_t7eiq")
@@ -12,10 +12,10 @@ metadata/_edit_lock_ = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_eqamu")
+texture = ExtResource("2_vw0fc")
 metadata/_edit_lock_ = true
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 12)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_r3ubs")
 metadata/_edit_lock_ = true
