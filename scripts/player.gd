@@ -4,8 +4,14 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@export var front_view: Texture2D
+@export var back_view: Texture2D
+@export var left_view: Texture2D
+@export var right_view: Texture2D
+
 @export var insects: Array[Insect]
 var in_fight := false
+var last_direction := Vector2.ZERO
 
 func _physics_process(_delta: float) -> void:
 	handle_move()
@@ -18,16 +24,30 @@ func handle_move() -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+		last_direction.x = direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	direction = Input.get_axis("up", "down")
 	if direction:
 		velocity.y = direction * SPEED
+		last_direction.y = direction
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
+	update_sprite_texture()
 	move_and_slide()
+
+func update_sprite_texture() -> void:
+	if last_direction.x > 0:
+		$Image.texture = right_view
+	elif last_direction.x < 0:
+		$Image.texture = left_view
+	elif last_direction.y > 0:
+		$Image.texture = front_view
+	elif last_direction.y < 0:
+		$Image.texture = back_view
+	last_direction = Vector2.ZERO
 
 func handle_fight_start() -> void:
 	if in_fight:
