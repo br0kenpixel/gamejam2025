@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://bunrxvcnny7ac"]
+[gd_scene load_steps=93 format=4 uid="uid://bunrxvcnny7ac"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_vp5j8"]
 [ext_resource type="Texture2D" uid="uid://dqrd77wwchst5" path="res://sprites/TILESET VILLAGE TOP DOWN/GRASS DETAIL 1 - DAY.png" id="1_x5360"]
@@ -989,6 +989,24 @@ max_dmg = 10
 xp = 100
 sprite = ExtResource("44_k8fpa")
 
+[sub_resource type="Resource" id="Resource_vdcqj"]
+script = ExtResource("40_musa5")
+enemy_name = "Drake"
+category = 2
+health = 100
+max_health = 100
+max_dmg = 10
+xp = 100
+
+[sub_resource type="Resource" id="Resource_napmn"]
+script = ExtResource("40_musa5")
+enemy_name = "Dragon-fire"
+category = 1
+health = 100
+max_health = 80
+max_dmg = 10
+xp = 100
+
 [node name="NewWorld" type="Node2D"]
 position = Vector2(-4, -33)
 script = ExtResource("1_vp5j8")
@@ -1023,5 +1041,6 @@ level = 2
 
 [node name="GodEnemy" parent="." instance=ExtResource("46_bphj5")]
 position = Vector2(1380, 945)
-person_name = "God Johnson"
+person_name = "Teregri"
+insects = Array[ExtResource("40_musa5")]([SubResource("Resource_vdcqj"), SubResource("Resource_napmn")])
 level = 3

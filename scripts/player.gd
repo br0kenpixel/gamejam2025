@@ -14,6 +14,8 @@ const JUMP_VELOCITY = -400.0
 @onready var fight_guide := $FightGuide
 @onready var inventory_display := $Inventory
 
+var should_die := false
+
 var in_fight := false
 var last_direction := Vector2.ZERO
 var challenged_enemy: Enemy = null
@@ -23,6 +25,9 @@ func _ready() -> void:
 	fight_guide.visible = false
 
 func _physics_process(_delta: float) -> void:
+	if should_die:
+		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
+		return
 	handle_move()
 	handle_fight_start()
 
@@ -100,3 +105,9 @@ func inventory_item_selected(n: int) -> void:
 
 	PlayerVariables.player = self.duplicate()
 	PlayerVariables.enemy = challenged_enemy.duplicate()
+
+func die() -> void:
+	#get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
+	#print(get_tree())
+	#get_tree().change_scene_to_file.bind("res://scenes/end_screen.tscn").call_deferred()
+	should_die = true

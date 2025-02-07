@@ -4,11 +4,17 @@ var current_opponent_insect: Insect = null
 var current_player_insect: Insect = null
 var turn := false # False = player, True = opponent
 
+var stop := false
+
 func _ready() -> void:
 	load_next_opponent_insect()
 	load_next_player_insect()
 
 func _process(_delta: float) -> void:
+	if stop:
+		print("aaaaaaaaa")
+		return
+
 	if turn:
 		# Opponent's turn
 		print("Opponent will now attack")
@@ -24,17 +30,22 @@ func _process(_delta: float) -> void:
 		if !load_next_opponent_insect():
 			print("Opponent does not have any insects left, player wins")
 			PlayerVariables.player.level += 1
-			exit_fight()
-			return
+
+			if PlayerVariables.enemy.person_name == "Teregri":
+				PlayerVariables.player.die()
+				return
+			else:
+				exit_fight()
+				return
 			
 	if current_player_insect.health <= 0:
 		print("Player's insect died")
 		if !load_next_player_insect():
 			print("Player does not have any insects left, opponent wins")
-			PlayerVariables.player.level -= 1
-			if PlayerVariables.player.level < 0:
-				PlayerVariables.player.level = 0
-			exit_fight()
+			#PlayerVariables.player.die()
+			get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
+			stop = true
+			print("je true")
 			return
 
 func opponent_turn_exec() -> void:
@@ -127,5 +138,7 @@ func cancel_fight() -> void:
 	exit_fight()
 
 func exit_fight() -> void:
+	if stop:
+		return
 	get_tree().change_scene_to_file("res://scenes/new_world.tscn")
 	print("ending fight")

@@ -8,11 +8,26 @@ func _ready() -> void:
 		PlayerVariables.player = null
 	
 	if PlayerVariables.enemy != null:
-		var children := get_children()
-		for child in children:
-			if child is Enemy:
-				if child.person_name == PlayerVariables.enemy.person_name:
-					child.call_deferred("queue_free")
-					print("syncing enemies")
-					PlayerVariables.enemy = null
-					return
+		PlayerVariables.defeated_enemies.push_back(PlayerVariables.enemy)
+
+	if get_enemies().is_empty():
+		PlayerVariables.player.die()
+	
+	var fightable_enemy_found := false
+	for child in get_enemies():
+		if child.level <= $Player.level:
+			fightable_enemy_found = true
+			break
+	
+	if !fightable_enemy_found:
+		PlayerVariables.player.die()
+
+func get_enemies() -> Array[Enemy]:
+	var children := get_children()
+	var result: Array[Enemy] = []
+
+	for child in children:
+		if child is Enemy:
+			result.push_back(child as Enemy)
+	
+	return result
